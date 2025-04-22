@@ -1,9 +1,18 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Alert } from "react-native";
+
+import { Button } from "./components/button";
 
 export default function Index() {
+    function handleMessage() {
+        const name = "Bruno Hoinacki";
+        Alert.alert("Olá " + name);
+    }
+
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Hello world in React Native</Text>
+            <Text style={styles.title}>Primeiro App</Text>
+            <Button title="Entrar" onPress={handleMessage}/>
+            <Button title="Sair" onPress={handleMessage}/>
         </View>
     );
 }
@@ -13,6 +22,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
+        gap: 20,
     },
 
     title: {
